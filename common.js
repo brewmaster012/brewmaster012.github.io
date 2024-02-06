@@ -53,9 +53,9 @@ if (network == "mockmain") {
     zetaIP =  "100.113.213.95";
     nodeURL = `http://${zetaIP}:1317`;
     evmURL = `http://${zetaIP}:8545`;
+    tmURL = `http://${zetaIP}:26657`;
     corsProxyURL = `http://${auxIP}:8088`;
     checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
-    tmURL = `http://${zetaIP}:26657`;
     hashServerURL = `http://${auxIP}:9001`;
     RPCByChainID[zetaChainID] = evmURL;
     zetaChainID = 70000;
@@ -113,13 +113,12 @@ if (network == "mockmain") {
     };
     zetaclientIPs = ["50.16.78.24", "44.218.42.109","44.216.230.163"];
 } else if (network == "mainnet") {
-    nodeURL = `https://zeta.api.nodeshub.online:443/`;
+    nodeURL = `https://zetachain-mainnet-archive.allthatnode.com:1317`;
     evmURL = `https://zetachain-mainnet-archive.allthatnode.com:8545`;
-    tmURL = `https://zeta.rpc.nodeshub.online:443/`;
+    tmURL = `https://zetachain-mainnet-archive.allthatnode.com:26657`;
     corsProxyURL = `http://${auxIP}:8088`;
     checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
     hashServerURL = `http://${auxIP}:9001`;
-
     bitcoinChainID = 8332; 
     zetaChainID = 7000;
     RPCByChainID = {
@@ -277,6 +276,8 @@ if (network == "mockmain") {
         "54.254.133.239",
     ];
 }
+
+    // RPCByChainID[zetaChainID] = evmURL;
 
 
 export async function getForegienCoins() {
