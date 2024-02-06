@@ -258,11 +258,14 @@ if (network == "mockmain") {
     ];
 }
 
-nodeURL = `http://${zetaIP}:1317`;
-evmURL = `http://${zetaIP}:8545`;
+nodeURL = `https://zetachain-athens.blockpi.network/lcd/v1/public`;
+evmURL = `https://zetachain-athens-evm.blockpi.network/v1/rpc/public`;
 corsProxyURL = `http://${auxIP}:8088`;
 checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
-tmURL = `http://${zetaIP}:26657`;
+tmURL = `https://zetachain-athens.blockpi.network/rpc/v1/public`;
+
+// tmURL = `wss://zetachain-athens.blockpi.network/rpc/v1/public/websocket`;
+// tmURL = `http://${zetaIP}:26657`;
 hashServerURL = `http://${auxIP}:9001`;
 RPCByChainID[zetaChainID] = evmURL;
 
@@ -278,9 +281,9 @@ export async function getForegienCoins() {
 }
 
 
-if (window.location.protocol === 'https:') {
-    alert('HTTPS does not work; force your browser to use HTTP instead.');
-}
+// if (window.location.protocol === 'https:') {
+//     alert('HTTPS does not work; force your browser to use HTTP instead.');
+// }
 
 
 
