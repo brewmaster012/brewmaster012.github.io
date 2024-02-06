@@ -29,13 +29,10 @@ async function node_info() {
         var syncing = true;
         var r1 = await fetch(`${nodeURL}/${resource}`, {
             method: 'GET',
-            mode: 'no-cors',
-        },
-        );
+        });
         resource = "cosmos/base/tendermint/v1beta1/syncing";
         var r2 = await fetch(`${nodeURL}/${resource}`, {
             method: 'GET',
-            mode: 'no-cors'
         });
         var data = await r1.json();
         // console.log(data);
