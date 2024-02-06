@@ -112,7 +112,6 @@ if (network == "mockmain") {
     };
     zetaclientIPs = ["50.16.78.24", "44.218.42.109","44.216.230.163"];
 } else if (network == "mainnet") {
-    // zetaIP =  "46.4.15.110";
     nodeURL = `https://zetachain-mainnet-archive.allthatnode.com:1317`;
     evmURL = `https://zetachain-mainnet-archive.allthatnode.com:8545`;
     tmURL = `https://zetachain-mainnet-archive.allthatnode.com:26657`;
@@ -193,13 +192,12 @@ if (network == "mockmain") {
 } else { // default to athens3
     bitcoinChainID = 18332; 
     network = "athens3";
-    zetaIP = '46.4.15.110';
+    // zetaIP = '46.4.15.110';
     nodeURL = `https://zetachain-athens.blockpi.network/lcd/v1/public`;
     evmURL = `https://zetachain-athens-evm.blockpi.network/v1/rpc/public`;
     tmURL = `https://zetachain-athens.blockpi.network/rpc/v1/public`;
     corsProxyURL = `http://${auxIP}:8088`;
     checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
-    // tmURL = `http://${zetaIP}:26657`;
     hashServerURL = `http://${auxIP}:9001`;
 
     zetaChainID = 7001
