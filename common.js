@@ -287,6 +287,7 @@ export async function getForegienCoins() {
 
 
 
+
 export function addDetails(sum, det) {
     return DIV(
         DETAILS(
