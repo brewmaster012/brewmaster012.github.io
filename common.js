@@ -113,7 +113,7 @@ if (network == "mockmain") {
     };
     zetaclientIPs = ["50.16.78.24", "44.218.42.109","44.216.230.163"];
 } else if (network == "mainnet") {
-    nodeURL = `https://zetachain-mainnet-archive.allthatnode.com:1317`;
+    nodeURL = `https://zeta.api.nodeshub.online:443/`;
     evmURL = `https://zetachain-mainnet-archive.allthatnode.com:8545`;
     tmURL = `https://zetachain-mainnet-archive.allthatnode.com:26657`;
     corsProxyURL = `http://${auxIP}:8088`;
