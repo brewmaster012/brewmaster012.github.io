@@ -284,10 +284,9 @@ if (network == "mockmain") {
 }
 
 
-corsProxyURL = `http://${auxIP}:8088`;
-checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
-// tmURL = `http://${zetaIP}:26657`;
-hashServerURL = `http://${auxIP}:9001`;
+// corsProxyURL = `http://${auxIP}:8088`;
+// checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
+// hashServerURL = `http://${auxIP}:9001`;
 RPCByChainID[zetaChainID] = evmURL;
 
 
