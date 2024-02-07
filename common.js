@@ -48,8 +48,16 @@ networkSelector.addEventListener("change", function() {
 });
 export var network = localStorage.getItem("network");
 if (network == "mockmain") {
+    
     bitcoinChainID = 8332; 
     zetaIP =  "100.113.213.95";
+    nodeURL = `http://${zetaIP}:1317`;
+    evmURL = `http://${zetaIP}:8545`;
+    tmURL = `http://${zetaIP}:26657`;
+    corsProxyURL = `http://${auxIP}:8088`;
+    checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
+    hashServerURL = `http://${auxIP}:9001`;
+    RPCByChainID[zetaChainID] = evmURL;
     zetaChainID = 70000;
     RPCByChainID = {
         1: "https://eth.llamarpc.com",
@@ -105,8 +113,13 @@ if (network == "mockmain") {
     };
     zetaclientIPs = ["50.16.78.24", "44.218.42.109","44.216.230.163"];
 } else if (network == "mainnet") {
+    nodeURL = `https://zeta.api.nodeshub.online:443/`;
+    evmURL = `https://zetachain-mainnet-archive.allthatnode.com:8545`;
+    tmURL = `https://zetachain-mainnet-archive.allthatnode.com:26657`;
+    corsProxyURL = `http://${auxIP}:8088`;
+    checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
+    hashServerURL = `http://${auxIP}:9001`;
     bitcoinChainID = 8332; 
-    zetaIP =  "46.4.15.110";
     zetaChainID = 7000;
     RPCByChainID = {
         1: "https://eth.llamarpc.com",
@@ -176,7 +189,13 @@ if (network == "mockmain") {
 } else { // default to athens3
     bitcoinChainID = 18332; 
     network = "athens3";
-    zetaIP = '46.4.15.110';
+    nodeURL = `https://zetachain-athens.blockpi.network/lcd/v1/public`;
+    evmURL = `https://zetachain-athens-evm.blockpi.network/v1/rpc/public`;
+    tmURL = `https://zetachain-athens.blockpi.network/rpc/v1/public`;
+    corsProxyURL = `http://${auxIP}:8088`;
+    checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
+    hashServerURL = `http://${auxIP}:9001`;
+
     zetaChainID = 7001
     RPCByChainID = {
         5: "https://rpc.ankr.com/eth_goerli",
@@ -258,14 +277,7 @@ if (network == "mockmain") {
     ];
 }
 
-nodeURL = `http://${zetaIP}:1317`;
-evmURL = `http://${zetaIP}:8545`;
-corsProxyURL = `http://${auxIP}:8088`;
-checkURL = `http://${auxIP}:8888`; // remote server that tests port 6668 p2p nodes
-tmURL = `http://${zetaIP}:26657`;
-hashServerURL = `http://${auxIP}:9001`;
-RPCByChainID[zetaChainID] = evmURL;
-
+    // RPCByChainID[zetaChainID] = evmURL;
 
 
 export async function getForegienCoins() {
@@ -275,11 +287,6 @@ export async function getForegienCoins() {
     const p1 = await fetch(url, {  method: 'GET', });
     const data = await p1.json();
     return data?.foreignCoins; 
-}
-
-
-if (window.location.protocol === 'https:') {
-    alert('HTTPS does not work; force your browser to use HTTP instead.');
 }
 
 
