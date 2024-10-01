@@ -284,7 +284,7 @@ var web3 = new Web3(`${evmTxURL}`);
         await validateContracts(80001);
     }
 
-    document.getElementById("validate-contracts").onclick = validate;
+    // document.getElementById("validate-contracts").onclick = validate;
 
     // validate();
 
@@ -317,15 +317,15 @@ var web3 = new Web3(`${evmTxURL}`);
         return data;
     }
 
-    document.getElementById("input-debug-intx").onchange = async function () {
-        let intxHash = document.getElementById("input-debug-intx").value;
-        const cctxIndex = await inTxHashToCCTXIndex(intxHash);
-        console.log("cctxIndex", cctxIndex);
-        if (cctxIndex) {
-            document.getElementById("input-debug-cctx").value = cctxIndex.inTxHashToCctx.cctx_index;
-        }
-    };
-    document.getElementById("button-debug-intx").onclick = document.getElementById("input-debug-intx").onchange;
+    // document.getElementById("input-debug-intx").onchange = async function () {
+    //     let intxHash = document.getElementById("input-debug-intx").value;
+    //     const cctxIndex = await inTxHashToCCTXIndex(intxHash);
+    //     console.log("cctxIndex", cctxIndex);
+    //     if (cctxIndex) {
+    //         document.getElementById("input-debug-cctx").value = cctxIndex.inTxHashToCctx.cctx_index;
+    //     }
+    // };
+    // document.getElementById("button-debug-intx").onclick = document.getElementById("input-debug-intx").onchange;
 
     async function debugCCTX() {
         function append(message) {
@@ -423,7 +423,7 @@ var web3 = new Web3(`${evmTxURL}`);
         }
     }
 
-    document.getElementById("button-debug-cctx").addEventListener("click", debugCCTX);
+    // document.getElementById("button-debug-cctx").addEventListener("click", debugCCTX);
 
     async function getReceipt(chainId, txhash) {
         const rpcEndpoint = RPCByChainID[chainId];

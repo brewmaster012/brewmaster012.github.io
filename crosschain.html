@@ -1,83 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> 
+<head>
     <meta charset="utf-8">
     <title>Cross Chain Module</title>
     <link rel="stylesheet" href="./main.css">
-  </head>
-  <body>
-    
-    <h2 id="sec-cross-chain-module">Cross Chain Module</h2>
-    <div class="container">
-      <div class="item">
-	<b>Supported Chains</b>
-	<div id="supported-chains-summary"></div>
-	<button onclick="toggleDropdown('supported-chains')">Raw JSON</button>
-	<pre id="supported-chains" class="dropdown-content"></pre>
-      </div>
+</head>
+<body>
 
-      <div class="item">
-	<b>Pending Outbound Queues</b>
-	<div id="pending-outbound-queues-summary"></div>
-	<button onclick="toggleDropdown('pending-outbound-queues')">Raw JSON</button>
-	<pre id="pending-outbound-queues" class="dropdown-content"></pre>
-      </div>
+<h2 id="sec-cross-chain-module">Cross Chain Module</h2>
+<div class="container">
+    <div class="item">
+        <b>Supported Chains</b>
+        <div id="supported-chains-summary"></div>
+        <button onclick="toggleDropdown('supported-chains')">Raw JSON</button>
+        <pre id="supported-chains" class="dropdown-content"></pre>
+    </div>
 
-        <div class="item">
-            <b>Block Header States</b>
-            <div id="block-header-state-summary"></div>
-            <button onclick="toggleDropdown('block-header-state')">Raw JSON</button>
-            <pre id="block-header-state" class="dropdown-content"></pre>
-        </div>
+    <div class="item">
+        <b>Pending Outbound Queues</b>
+        <div id="pending-outbound-queues-summary"></div>
+        <button onclick="toggleDropdown('pending-outbound-queues')">Raw JSON</button>
+        <pre id="pending-outbound-queues" class="dropdown-content"></pre>
+    </div>
 
-
-        <div class="item">
-	<b>External Contract Addresses</b>
-	<div id="external-contract-addresses-summary"></div>
-	<button onclick="toggleDropdown('external-contract-addresses')">Raw JSON</button>
-	<pre id="external-contract-addresses" class="dropdown-content"></pre>
-
-
-      </div>
-      <div>
-	<p> <b>Console</b><br>
-	<button id="validate-contracts">Validate Contracts</button></p>
-	<textarea  id="console" cols="80" rows="10" style="font-family: monospace;"></textarea>
-      </div>
-      <div>
-	<b>Debug CCTX</b><br>
-	<p>
-	  <label for="input-debug-intx">Inbound Transaction Hash</label>
-	  <input id="input-debug-intx" type="text" size="80" value="0xc380b9c808aa4a9ae6caea25a379dfcd9062f8912bb8801971775be3b135a455"></input>
-	  <button id="button-debug-intx">Find CCTX</button><br>
-	  <label for="input-debug-cctx">CCTX Hash</label>
-	  <input id="input-debug-cctx" type="text" size="80" value="0x2805d7d64b12609b1be80ee17290ba88b39f3e139dbe6dbecda8c8dbea4e04a6"></input>
-	  <button id="button-debug-cctx">Analyze</button>
-	  <button id="button-cctx-json" onclick="toggleDropdown('cctx-json')">CCTX JSON</button>
-	</p>
-
-	<pre id="cctx-json" class="dropdown-content"></pre>
-	<textarea  id="console-debug-cctx" cols="80" rows="20" style="font-family: monospace;"></textarea>	
-      </div>
-
-      <div id="txtracker">
-	<b>Outbound Transaction Tracker</b><br>
-      </div>
-
-      <div id="pending">
-	<b>Pending CCTXs</b><br>
-	
-      </div>
-
+    <div class="item">
+        <b>Block Header States</b>
+        <div id="block-header-state-summary"></div>
+        <button onclick="toggleDropdown('block-header-state')">Raw JSON</button>
+        <pre id="block-header-state" class="dropdown-content"></pre>
     </div>
 
 
-    
+    <div class="item">
+        <b>External Contract Addresses</b>
+        <div id="external-contract-addresses-summary"></div>
+        <button onclick="toggleDropdown('external-contract-addresses')">Raw JSON</button>
+        <pre id="external-contract-addresses" class="dropdown-content"></pre>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-    <!-- <script src="./common.js"></script> -->
-    <script src="./utils.js"></script>
-    <script src="./tag.js"></script>
-    <script type="module" src="./crosschain.js"></script>
-  </body>
+    <div id="txtracker">
+        <b>Outbound Transaction Tracker</b><br>
+    </div>
+
+    <div id="pending">
+        <b>Pending CCTXs</b><br>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+<!-- <script src="./common.js"></script> -->
+<script src="./utils.js"></script>
+<script src="./tag.js"></script>
+<script type="module" src="./crosschain.js"></script>
+</body>
 </html>
